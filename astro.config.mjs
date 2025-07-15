@@ -7,5 +7,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   integrations: [sitemap()],
   site: "https://aifc2025.github.io/GOSIM-spotlight", 
-  base: "/GOSIM-spotlight",   
+  base: "/spotlight-2025",   
 });
