@@ -1,0 +1,51 @@
+---
+interface Props {
+	title: string,
+    description: string,
+    cards?: Array<{
+        title: string,
+        description: string,
+        image: string,
+    }>,
+}
+
+const { title, description, cards } = Astro.props;
+---
+
+<section
+    class="section section-home-why"
+    data-theme-section="light"
+    data-bg-section="light"
+    id="why-participate"
+>
+    <div class="container">
+        {title && (
+        <div class="row row-title">
+            <div class="col full-title">
+                <h2 class="cards-title">{title}</h2>
+            </div>
+        </div>
+        )}
+
+        <div class="row row-audience grid">
+            {cards?.map((loop) => (
+                <div class="col why-reasons">
+                    <img 
+                        src={loop.image}
+                        alt={loop.title}
+                        width="48"
+                        height="48"
+                        loading="lazy"
+                    />
+                
+                    <div class="why-content">
+                        <h4>{loop.title}</h4>
+                        <p>{loop.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+

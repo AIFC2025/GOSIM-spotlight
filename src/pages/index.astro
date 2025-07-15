@@ -9,6 +9,8 @@ import GetTickets from "components/GetTickets.astro"
 import ProgramOverview from "components/ProgramOverview.astro"
 import Timeline from "components/Timeline.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
+import CardsProgram from "components/CardsProgram.astro";
+
 
 // Images
 import GosimDelft from "images/homepage/gosim-delft.png"
@@ -46,13 +48,11 @@ import GosimParis2 from "images/homepage/sl-paris2.png"
   >
     <Intro>
       <h1 class="h3 light split-words animate-read">
-        Are you building something revolutionary?
-        <p></p>
-        <b>GOSIM Hangzhou Spotlight</b>
-        is your launchpad to the world! This program offers early-stage, global open-source
-        projects a unique opportunity to shine at<p></p> GOSIM Hangzhou – China's
-        premier open-source conference, taking place from Sep 13-14, 2025 in the
-        city of Hangzhou, China.
+        <b>What if AI wasn't just built to serve, but to co-create with us?</b>
+        <p></p><br>
+        <b>AI for Human Spotlight</b> is an international showcase for projects that explore how generative AI can foster <b>empathy, shared creativity, and ethical coexistence.</b>
+        <p></p><br>
+        This spotlight will take place as part of GOSIM Hangzhou, China’s leading open-source conference, from September 13–14, 2025, in Hangzhou, China.
       </h1>
     </Intro>
   </div>
@@ -99,42 +99,45 @@ import GosimParis2 from "images/homepage/sl-paris2.png"
    -->
   <Cards
     title="Why Apply?"
-    description="Showcase your project to a global developer audience, gain mentorship from top experts, and present your project at GOSIM Hangzhou 2025 Spotlights. Selected teams receive travel grants, exclusive visibility, and access to a vibrant community of developers, collaborators, and contributors — all dedicated to advancing the open-source movement."
+    description={[
+    "Gain international visibility, connect with leading voices across AI, art, and society, and showcase your work at the AI for Human Spotlight at GOSIM Hangzhou 2025.",
+    "Selected submissions will be featured in a curated program that brings together developers, researchers, artists, and practitioners working at the frontier of generative AI. Participants will receive expert feedback, strategic exposure, and access to a global network of collaborators. Travel support and follow-up opportunities for incubation or publication may be available for outstanding projects.",
+    ]}
     cards={[
       {
         title: "Exclusive Showcase",
         description:
-          "Showcase your project at a dedicated demo booth to global leaders, developers, and enthusiasts.",
+          "Present your project or artwork to a curated global audience across tech, art, and society.",
         image: "/icons/showcase.svg",
       },
       {
         title: "Travel Support",
         description:
-          "Win grants covering travel and accommodation for project owners or reps.",
+          "Receive travel and accommodation funding for selected representatives to present their work on-site in Hangzhou.",
         image: "/icons/travel-support.svg",
       },
       {
-        title: "Mentorship & Resources",
+        title: "Mentorship Access",
         description:
-          "Receive guidance from top experts and spotlight judges committed to supporting selected projects.",
+          "Get expert feedback from leading AI researchers, designers, artists, and spotlight jury members.",
         image: "/icons/mentorship.svg",
       },
       {
         title: "Global Visibility",
         description:
-          "Present your project during GOSIM Hangzhou 2025 for exposure to a global tech audience.",
+          "PGain recognition at GOSIM Hangzhou 2025 and connect with international collaborators and platforms.",
         image: "/icons/global-visibility.svg",
       },
       {
-        title: "Networking & Recognition",
+        title: "Incubation Opportunities",
         description:
-          "Connect with collaborators, developers, and industry leaders while gaining recognition in the open-source community.",
+          "Selected projects may be connected with post-event opportunities such as early-stage funding, institutional partnerships, or showcase invitations.",
         image: "/icons/networking-recognition.svg",
       },
       {
-        title: "Community Growth",
+        title: "Community & Growth",
         description:
-          "Attract contributors and establish your project as a leader in the open-source ecosystem.",
+          "build long-term partnerships, and grow within a values-driven open-source ecosystem.",
         image: "/icons/community-growth.svg",
       },
     ]}

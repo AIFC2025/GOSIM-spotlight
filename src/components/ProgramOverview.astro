@@ -1,6 +1,7 @@
 ---
 // Packages
 import { Picture } from "astro:assets";
+import CardsProgram from "components/CardsProgram.astro";
 
 // Components
 import Button from "components/Button.astro";
@@ -29,12 +30,13 @@ interface Props {
 }
 
 const {
+  
   programTitle = "The Program",
-  programDescription = "GOSIM Hangzhou Spotlight is designed to:",
+  programDescription = "AI for Human Spotlight at GOSIM Hangzhou is designed to:",
   bulletPoints = [
-    "Highlight great open-source projects, papers, and community efforts, showcasing their innovation and potential impact.",
-    "Provide visibility and recognition for outstanding projects, papers, or efforts that deserve a wider audience and broader appreciation.",
-    "Encourage collaboration and foster a sense of community within the open-source ecosystem through shared goals and teamwork.",
+    "Showcase groundbreaking AIGC projects—from practical applications in education, mental health, and accessibility to artistic explorations across visual art, literature, and performance.",
+    "Amplify the voices behind innovation, offering visibility and recognition to impactful projects, models, and creators at the intersection of technology, society, and culture.",
+    "Foster cross-disciplinary collaboration, encouraging a shared vision of symbiotic intelligence and human–AI co-creation through open dialogue and collective reflection.",
   ],
   finalistText = "This year, 10+ finalist (project/paper/model) will be selected and showcased at",
   conferenceLink = "#",
@@ -47,6 +49,26 @@ const {
   ],
 } = Astro.props;
 ---
+
+<section class="cards-wrapper">
+  <CardsProgram
+    title="This year’s edition features two distinct tracks:"
+    cards={[
+      {
+        title: "Applied AI & Interactive Demos ",
+        description:
+          "Showcasing practical products and solutions powered by generative AI, with applications in education, mental health, elder care, and social services.",
+          image: "/icons/networking-recognition.svg",
+      },
+      {
+        title: "AIGC-Driven Artistic Works",
+        description:
+          "Featuring creative expressions across visual art, literature, music, and performance that push the boundaries of human–AI co-creation.",
+          image: "/icons/mentorship.svg",
+      },
+    ]}
+  />
+</section>
 
 <section
   class="section section-program-overview"
@@ -64,6 +86,7 @@ const {
         <ul class="feature-list">
           {
             bulletPoints.map((point) => (
+              
               <li class="feature-item">
                 <div class="check-icon">
                   <svg
@@ -135,8 +158,9 @@ const {
 </section>
 
 <style>
+
   .section-program-overview {
-    padding: 4rem 0;
+    padding: 1rem 4rem;
   }
 
   .intro-title {
